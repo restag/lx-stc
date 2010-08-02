@@ -1,0 +1,29 @@
+This is a lightly modified version of STC ("simple tetris clone") v0.3 from
+http://code.google.com/p/simple-tetris-clone/ and available under the MIT
+license: http://www.opensource.org/licenses/mit-license.php
+
+Its only dependency is libSDL.
+
+To build, set your CROSS_COMPILE environment variable (ex: "arm-linux-") and
+ROOTFS_PATH variable (which should point to the rootfs directory tree where
+your libSDL headers can be found), then type "make".
+
+To "install", copy ./sdl-stc to /usr/bin on your device and copy the .bmp files
+in ./bin/sdl to /usr/share on your device.
+
+The changes are:
+- adjust for 320x240 screen (and therefore make the grid less tall)
+- move the "next piece" up a bit
+- change the default controls to match the buttons that we have
+- change some file paths around
+
+The "statistics" graphics don't really fit in a 320x240 screen but they're left
+alone, they simply won't render.
+
+Controls:
+- arrows move the piece around, the up arrow rotates it clockwise
+- A toggles whether the next piece is shown
+- right shoulder toggles whether the "ghost piece" is shown
+- left shoulder restarts the game
+- the pause button toggles the pause state
+- the home button exits the game
